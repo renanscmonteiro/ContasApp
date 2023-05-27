@@ -2,7 +2,7 @@
 
 Esta é uma aplicação ASP.NET MVC desenvolvida com o uso do Entity Framework para o controle financeiro de contas.
 
-Acesse a aplicação [aqui](http://contasapp1-001-site1.btempurl.com/).
+Acesse a aplicação [aqui](http://appcontasrenan-001-site1.ftempurl.com/).
 
 ## Requisitos
 
