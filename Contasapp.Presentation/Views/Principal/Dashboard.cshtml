@@ -1,0 +1,61 @@
+﻿<div class="mb-3">
+    <h5>Dashboard Principal</h5>
+    <p>Resumo financeiro do período de: <strong>DATA INICIO</strong> até <strong>DATA FIM</strong></p>
+</div>
+
+<div class="row mb-2">
+    <div class="col-md-6">
+        <div id="chartPizza"></div>
+    </div>
+    <div class="col-md-6">
+        <div id="chartBarras"></div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+    <script>
+        // Gráfico de Pizza
+        Highcharts.chart('chartPizza', {
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Exemplo de Gráfico de Pizza'
+            },
+            series: [{
+                name: 'Dados',
+                data: [
+                    ['Categoria 1', 30],
+                    ['Categoria 2', 20],
+                    ['Categoria 3', 50]
+                ]
+            }]
+        });
+
+        // Gráfico de Barras
+        Highcharts.chart('chartBarras', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Exemplo de Gráfico de Barras'
+            },
+            xAxis: {
+                categories: ['Categoria 1', 'Categoria 2', 'Categoria 3']
+            },
+            yAxis: {
+                title: {
+                    text: 'Valores'
+                }
+            },
+            series: [{
+                name: 'Série 1',
+                data: [10, 20, 30]
+            }]
+        });
+    </script>
+}

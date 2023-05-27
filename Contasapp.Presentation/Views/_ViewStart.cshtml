@@ -1,0 +1,19 @@
+﻿@{
+    //Capturar o endereço do controlador
+    // da página que está sendo acessada
+
+    var controller = this.ViewContext.RouteData
+                         .Values["controller"]?.ToString();
+
+    // verificando qual é o controlador da página
+    switch (controller)
+    {
+        case "Account":
+            Layout = "~/Views/Shared/_AccountLayout.cshtml";
+            break;
+
+        default:
+            Layout = "~/Views/Shared/_AdminLayout.cshtml";
+            break;
+    }
+}

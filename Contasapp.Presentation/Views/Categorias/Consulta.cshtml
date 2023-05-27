@@ -1,0 +1,60 @@
+﻿@** Declarando a classe de modelo desta página *@
+@model List<ContasApp.Presentation.Models.CategoriasConsultaViewModel>
+
+@** Acessando a sessão do _AdminLayout 'styles' *@
+@section styles {
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+}
+
+@** Acessando a sessão do _AdminLayout 'scripts' *@
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#consulta_categorias").DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json'
+                }
+            });
+        })
+    </script>
+}
+
+<div class="mb-3">
+    <h5>Consulta de categorias</h5>
+    <p>Listagem de categorias de contas cadastradas para o seu usuário.</p>
+</div>
+
+<div class="table-responsive">
+    <table id="consulta_categorias" class="table table-hover table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Nome da categoria</th>
+                <th>Tipo</th>
+                <th width="140">Operações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Tipo</td>
+                    <td>
+                        <a href="/Categorias/Edicao/@item.Id"
+                           class="btn btn-outline-primary btn-sm">
+                            Editar
+                        </a>
+                        <a href="/Categorias/Exclusao/@item.Id"
+                           onclick="return confirm('Deseja realmente excluir a categoria selecionada?');"
+                           class="btn btn-outline-danger btn-sm">
+                            Excluir
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

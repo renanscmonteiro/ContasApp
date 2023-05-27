@@ -1,0 +1,34 @@
+﻿@** Declarando a classe de modelo desta página *@
+@model ContasApp.Presentation.Models.CategoriasCadastroViewModel
+
+<div class="mb-3">
+    <h5>Cadastro de categorias</h5>
+    <p>Inclua categorias para gerenciar suas contas no sistema.</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="row mb-2">
+        <div class="col-md-8">
+            <label>Nome da categoria:</label>
+            @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label>Selecione o tipo:</label>
+            @Html.DropDownListFor(model => model.Tipo, ViewBag.tipos as SelectList, 
+                "Escolha uma opção", new {@class="form-select"})
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Tipo)
+            </div>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <input type="submit" value="Realizar Cadastro" class="btn btn-success" />
+            <a href="/Categorias/Consulta" class="btn btn-light">Ir para a consulta</a>
+        </div>
+    </div>
+}

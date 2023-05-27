@@ -1,0 +1,36 @@
+# Ignorar arquivos gerados pelo Visual Studio
+*.obj
+*.pdb
+*.cache
+*.dll
+*.exe
+*.log
+*.user
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ilk
+*.msi
+*.ncb
+*.pdb
+*.suo
+*.tlb
+*.tlh
+*.tmp
+*.obj
+*.dll
+*.ipch
+*.bak
+*._mpx
+*.docstates
+*.csproj.user
+
+# Ignorar pastas geradas pelo Visual Studio
+bin/
+obj/
+TestResults/
+.vs/
+
+
+

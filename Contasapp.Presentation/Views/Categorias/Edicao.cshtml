@@ -1,0 +1,38 @@
+﻿@** Declarando a classe de modelo desta página *@
+@model ContasApp.Presentation.Models.CategoriasEdicaoViewModel
+
+<div class="mb-3">
+    <h5>Edição de categorias</h5>
+    <p>Utilize o formulário para modificar os dados da categoria.</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.HiddenFor(model => model.Id)
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-8">
+            <label>Nome da categoria:</label>
+            @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label>Selecione o tipo:</label>
+            @Html.DropDownListFor(model => model.Tipo, ViewBag.Tipos as SelectList,
+        "Escolha uma opção", new { @class = "form-select" })
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Tipo)
+            </div>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <input type="submit" value="Salvar Alterações" class="btn btn-primary" />
+            <a href="/Categorias/Consulta" class="btn btn-light">Ir para a consulta</a>
+        </div>
+    </div>
+}

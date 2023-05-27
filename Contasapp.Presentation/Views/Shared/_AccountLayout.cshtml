@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContasApp</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand">ContasApp</a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Account/Login">
+                        Acessar minha conta
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Account/Register">
+                        Criar Conta de usuário
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Account/PasswordRecover">
+                        Esqueci minha senha
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-body">
+                <!-- renderizar as views -->
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
